@@ -1,0 +1,604 @@
+/* Reset global de márgenes y rellenos */
+* {
+    margin: 0; /* Elimina los márgenes predeterminados de todos los elementos */
+    padding: 0; /* Elimina el relleno predeterminado de todos los elementos */
+}
+
+/* Estilos para las variantes de la fuente Poppins */
+
+/* Fuente Poppins con peso delgado */
+.poppins-thin {
+    font-family: "Poppins", sans-serif; /* Aplica la fuente Poppins con respaldo sans-serif */
+    font-weight: 100; /* Grosor extremadamente delgado */
+    font-style: normal; /* Fuente sin cursiva */
+}
+
+/* Fuente Poppins con peso extra-ligero */
+.poppins-extralight {
+    font-family: "Poppins", sans-serif; /* Usa la misma fuente con diferente grosor */
+    font-weight: 200; /* Grosor extra-ligero */
+    font-style: normal; /* Fuente sin cursiva */
+}
+
+/* Fuente Poppins con peso ligero */
+.poppins-light {
+    font-family: "Poppins", sans-serif; /* Usa Poppins */
+    font-weight: 300; /* Grosor ligero */
+    font-style: normal; /* Fuente sin cursiva */
+}
+
+/* Fuente Poppins con peso normal */
+.poppins-regular {
+    font-family: "Poppins", sans-serif; /* Aplica la fuente Poppins */
+    font-weight: 400; /* Grosor estándar (regular) */
+    font-style: normal; /* Fuente sin cursiva */
+}
+
+/* Fuente Poppins con peso semi-negrita */
+.poppins-semibold {
+    font-family: "Poppins", sans-serif; /* Fuente Poppins */
+    font-weight: 600; /* Grosor semi-negrita */
+    font-style: normal; /* Fuente sin cursiva */
+}
+
+/* Fuente Poppins con peso negrita */
+.poppins-bold {
+    font-family: "Poppins", sans-serif; /* Aplica Poppins */
+    font-weight: 700; /* Grosor negrita */
+    font-style: normal; /* Fuente sin cursiva */
+}
+
+/* ----- Estilos del header ----- */
+.header {
+    min-height: 100vh; /* El header ocupa el 100% de la altura de la ventana */
+    width: 100%; /* Ocupa todo el ancho de la página */
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(images/banner.png); /* Fondo con una imagen y un degradado oscuro */
+    background-position: center; /* Centra la imagen de fondo */
+    background-size: cover; /* Escala la imagen para cubrir todo el header */
+    position: relative; /* Permite posicionar elementos hijos relativamente */
+}
+
+/* ----- Estilos de la barra de navegación ----- */
+nav {
+    display: flex; /* Disposición en línea de los elementos */
+    padding: 2% 6%; /* Espaciado interno en porcentaje */
+    justify-content: space-between; /* Distribuye los elementos con espacio entre ellos */
+    align-items: center; /* Alinea los elementos verticalmente */
+}
+
+nav img {
+    width: 150px; /* Define el tamaño del logotipo */
+}
+
+/* Contenedor de los enlaces de navegación */
+.nav-links {
+    flex: 1; /* Usa el espacio disponible en el contenedor */
+    text-align: right; /* Alinea los enlaces a la derecha */
+}
+
+.nav-links ul li {
+    list-style: none; /* Elimina los marcadores de lista */
+    display: inline-block; /* Coloca los elementos en línea */
+    padding: 8px 12px; /* Espaciado interno para los enlaces */
+    position: relative; /* Necesario para el pseudoelemento ::after */
+}
+
+/* Estilo de los enlaces dentro del menú */
+.nav-links ul li a {
+    color: #fff; /* Texto blanco */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 13px; /* Tamaño pequeño del texto */
+}
+
+/* Animación de subrayado al pasar el ratón */
+.nav-links ul li::after {
+    content: ''; /* Pseudoelemento vacío para el efecto */
+    width: 0%; /* Ancho inicial del subrayado */
+    height: 2px; /* Altura del subrayado */
+    background: #f44336; /* Color rojo */
+    display: block; /* Muestra el subrayado */
+    margin: auto; /* Centra horizontalmente */
+    transition: 0.5s; /* Transición suave para el efecto */
+}
+
+.nav-links ul li:hover::after {
+    width: 100%; /* Ancho completo del subrayado al pasar el ratón */
+}
+
+/* ----- Caja de texto principal ----- */
+.text-box {
+    width: 90%; /* Ancho del contenedor relativo al header */
+    color: #fff; /* Texto blanco */
+    position: absolute; /* Posicionamiento relativo al contenedor */
+    top: 50%; /* Centrado vertical */
+    left: 50%; /* Centrado horizontal */
+    transform: translate(-50%, -50%); /* Ajuste exacto para centrar */
+    text-align: center; /* Centra el texto */
+}
+
+.text-box h1 {
+    font-size: 62px; /* Tamaño grande del título */
+}
+
+.text-box p {
+    margin: 10px 0 40px; /* Espaciado superior e inferior */
+    font-size: 14px; /* Tamaño estándar del texto */
+    color: #fff; /* Texto blanco */
+}
+
+/* ----- Botón de estilo "héroe" ----- */
+.hero-btn {
+    display: inline-block; /* Comportamiento de botón */
+    text-decoration: none; /* Sin subrayado */
+    color: #fff; /* Texto blanco */
+    border: 1px solid #fff; /* Borde blanco */
+    padding: 12px 34px; /* Espaciado interno */
+    font-size: 13px; /* Tamaño pequeño del texto */
+    background: transparent; /* Sin fondo por defecto */
+    position: relative; /* Necesario para la transición */
+    cursor: pointer; /* Cambia el cursor a una mano */
+}
+
+.hero-btn:hover {
+    border: 1px solid #f44336; /* Cambia el color del borde a rojo */
+    background: #f44336; /* Cambia el fondo a rojo */
+    transition: 1s; /* Transición suave para los cambios */
+}
+
+/* Iconos del menú móvil */
+nav .fa {
+    display: none; /* Ocultos por defecto para pantallas grandes */
+}
+
+/* ----- Media Query para pantallas pequeñas ----- */
+@media(max-width: 700px) {
+    .text-box h1 {
+        font-size: 20px; /* Reduce el tamaño del título */
+    }
+
+    .nav-links ul li {
+        display: block; /* Muestra los elementos del menú como bloque */
+    }
+
+    .nav-links {
+        position: absolute; /* Posiciona el menú sobre el contenido */
+        background: #f44336; /* Fondo rojo */
+        height: 100vh; /* Ocupa toda la altura de la pantalla */
+        width: 200px; /* Ancho del menú */
+        top: 0; /* Comienza en la parte superior */
+        right: -200px; /* Fuera de la pantalla inicialmente */
+        text-align: left; /* Alinea los enlaces a la izquierda */
+        z-index: 2; /* Asegura que esté por encima de otros elementos */
+        transition: 0.5s; /* Transición suave para abrir/cerrar */
+    }
+
+    nav .fa {
+        display: block; /* Muestra el icono del menú */
+        color: #fff; /* Color blanco */
+        margin: 10px; /* Espaciado alrededor del icono */
+        font-size: 22px; /* Tamaño del icono */
+        cursor: pointer; /* Cambia el cursor al pasar sobre el icono */
+    }
+
+    .nav-links ul {
+        padding: 30px; /* Espaciado interno para los enlaces del menú */
+    }
+}
+
+
+/* ----- Sección de cursos (COURSES) ----- */
+.COURSE {
+    width: 80%; /* El contenedor ocupa el 80% del ancho de la página */
+    margin: auto; /* Centra horizontalmente el contenedor */
+    text-align: center; /* Centra el texto dentro de la sección */
+    padding-top: 100px; /* Agrega espacio superior para separar la sección del contenido anterior */
+}
+
+/* Estilos para el título principal (h1) */
+h1 {
+    font-size: 36px; /* Tamaño grande para destacar el título */
+    font-weight: 600; /* Grosor semi-negrita */
+}
+
+/* Estilos para los párrafos */
+p {
+    color: #777; /* Color gris para un diseño más suave */
+    font-size: 14px; /* Tamaño estándar para texto descriptivo */
+    font-weight: 300; /* Fuente ligera para mayor legibilidad */
+    line-height: 22px; /* Espaciado entre líneas para facilitar la lectura */
+    padding: 10px; /* Espaciado interno adicional */
+}
+
+/* Contenedor para las columnas de cursos */
+.row {
+    margin-top: 5%; /* Agrega espacio superior para separar de otros elementos */
+    display: flex; /* Disposición flexible para las columnas */
+    justify-content: space-between; /* Espacia las columnas de manera uniforme */
+}
+
+/* Estilos individuales para cada columna de curso */
+.course-col {
+    flex-basis: 31%; /* Cada columna ocupa aproximadamente un tercio del ancho disponible */
+    background: #fff3f3; /* Fondo claro con tono rosado */
+    border-radius: 10px; /* Bordes redondeados para un diseño más amigable */
+    margin-bottom: 5%; /* Espacio inferior entre columnas en dispositivos pequeños */
+    padding: 20px 12px; /* Espaciado interno para un diseño limpio */
+    box-sizing: border-box; /* Incluye padding y bordes en el tamaño total del elemento */
+    transition: 0.5s; /* Efecto de transición suave para cambios visuales */
+}
+
+/* Estilos para los subtítulos dentro de las columnas (h3) */
+h3 {
+    text-align: center; /* Centra el texto */
+    font-weight: 600; /* Grosor semi-negrita */
+    margin: 10px 0; /* Espaciado superior e inferior para separación visual */
+}
+
+/* Efecto al pasar el cursor sobre una columna */
+.course-col:hover {
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2); /* Aplica una sombra para resaltar la columna */
+}
+
+/* ----- Adaptación para pantallas pequeñas ----- */
+@media(max-width: 700px) {
+    .row {
+        flex-direction: column; /* Cambia la disposición a columnas verticales */
+    }
+}
+
+
+/* ----- Sección Campus (CAMPUS) ----- */
+.CAMPUS {
+    width: 80%; /* El contenedor principal ocupa el 80% del ancho de la página */
+    margin: auto; /* Centra horizontalmente el contenedor */
+    text-align: center; /* Centra el texto dentro de la sección */
+    padding-top: 50px; /* Agrega espacio superior para separar de otras secciones */
+}
+
+/* Contenedor individual para cada campus */
+.campus-col {
+    flex-basis: 32%; /* Cada columna ocupa aproximadamente un tercio del ancho disponible */
+    border-radius: 10px; /* Bordes redondeados para un diseño suave */
+    margin-bottom: 30px; /* Espacio inferior entre columnas */
+    position: relative; /* Necesario para posicionar elementos hijos como la capa `.layer` */
+    overflow: hidden; /* Oculta cualquier contenido que se salga del contenedor */
+}
+
+/* Estilo de las imágenes dentro de cada columna */
+.campus-col img {
+    width: 100%; /* La imagen ocupa todo el ancho de su contenedor */
+    display: block; /* Se asegura de que no se generen espacios no deseados alrededor de la imagen */
+}
+
+/* Capa superpuesta sobre la imagen (inicialmente invisible) */
+.layer {
+    background: transparent; /* Sin color de fondo por defecto */
+    height: 100%; /* Cubre toda la altura del contenedor */
+    width: 100%; /* Cubre todo el ancho del contenedor */
+    position: absolute; /* Posicionada en relación con `.campus-col` */
+    top: 0; /* Inicia en la parte superior del contenedor */
+    left: 0; /* Inicia en la parte izquierda del contenedor */
+    transition: 0.5s; /* Efecto de transición suave al cambiar las propiedades */
+}
+
+/* Efecto al pasar el ratón sobre la capa */
+.layer:hover {
+    background: rgba(226, 0, 0, 0.7); /* Muestra una capa semitransparente de color rojo */
+}
+
+/* Estilos para el título (h3) dentro de la capa */
+.layer h3 {
+    width: 100%; /* El texto ocupa todo el ancho del contenedor */
+    font-weight: 500; /* Grosor medio para el texto */
+    color: #fff; /* Texto blanco */
+    font-size: 26px; /* Tamaño grande para destacar el texto */
+    bottom: 0; /* Posiciona el texto en la parte inferior del contenedor */
+    left: 50%; /* Centra horizontalmente el texto */
+    transform: translateX(-50%); /* Ajusta el texto para que esté centrado exactamente */
+    position: absolute; /* Posiciona el texto sobre la capa */
+    opacity: 0; /* Inicialmente, el texto es invisible */
+    transition: 0.5s; /* Transición suave al cambiar la posición y la opacidad */
+}
+
+/* Efecto al pasar el ratón sobre la capa */
+.layer:hover h3 {
+    bottom: 49%; /* Mueve el texto hacia el centro vertical del contenedor */
+    opacity: 1; /* Hace visible el texto */
+}
+
+/* ----- Sección de Instalaciones (FACILITIES) ----- */
+.facilities {
+    width: 80%; /* El contenedor principal ocupa el 80% del ancho de la página */
+    margin: auto; /* Centra horizontalmente el contenedor */
+    text-align: center; /* Centra el texto dentro de la sección */
+    padding-top: 100px; /* Agrega espacio superior para separar de otras secciones */
+}
+
+/* Contenedor individual para cada instalación */
+.facilities-col {
+    flex-basis: 31%; /* Cada columna ocupa aproximadamente un tercio del ancho disponible */
+    border-radius: 10px; /* Bordes redondeados para un diseño más amigable */
+    margin-bottom: 5%; /* Espacio inferior entre columnas */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+/* Imágenes dentro de las columnas de instalaciones */
+.facilities-col img {
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+    border-radius: 10px; /* Bordes redondeados para las imágenes */
+}
+
+/* Estilo para los párrafos dentro de las columnas */
+.facilities-col p {
+    padding: 0; /* Sin espaciado interno adicional */
+}
+
+/* Estilo para los títulos (h3) dentro de las columnas */
+.facilities-col h3 {
+    margin-top: 16px; /* Espaciado superior para separar del contenido anterior */
+    margin-bottom: 15px; /* Espaciado inferior */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+/* ----- Sección de Testimonios (TESTIMONIALS) ----- */
+.testimonials {
+    width: 80%; /* El contenedor ocupa el 80% del ancho de la página */
+    margin: auto; /* Centra horizontalmente el contenedor */
+    padding-top: 100px; /* Agrega espacio superior */
+    text-align: center; /* Centra el texto en la sección */
+}
+
+/* Estilos para cada testimonio individual */
+.testimonial-col {
+    flex-basis: 44%; /* Cada columna ocupa aproximadamente el 44% del ancho disponible */
+    border-radius: 10px; /* Bordes redondeados para un diseño más amigable */
+    margin-bottom: 5%; /* Espacio inferior entre columnas */
+    text-align: left; /* Alinea el contenido a la izquierda */
+    background: #fff3f3; /* Fondo claro con tono rosado */
+    padding: 25px; /* Espaciado interno para un diseño limpio */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    display: flex; /* Disposición en línea del contenido dentro del testimonio */
+}
+
+/* Estilos para las imágenes dentro de los testimonios */
+.testimonial-col img {
+    height: 40px; /* Altura de las imágenes de usuario */
+    margin-left: 5px; /* Espaciado izquierdo */
+    margin-right: 30px; /* Espaciado derecho */
+    border-radius: 50%; /* Imágenes circulares */
+}
+
+/* Estilos para los párrafos dentro de los testimonios */
+.testimonial-col p {
+    padding: 0; /* Sin espaciado interno adicional */
+}
+
+/* Estilos para los títulos (h3) dentro de los testimonios */
+.testimonial-col h3 {
+    margin-top: 15px; /* Espaciado superior */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+/* Estilos para las estrellas de calificación (Font Awesome) */
+.testimonial-col .fa {
+    color: #f44336; /* Color rojo para las estrellas */
+}
+
+.testimonial-col .fa-regular {
+    color: #f44336; /* Color rojo para las estrellas regulares */
+}
+
+/* Adaptaciones para pantallas pequeñas */
+@media(max-width: 700px) {
+    .testimonial-col img {
+        margin-left: 0px; /* Elimina el margen izquierdo */
+        margin-right: 15px; /* Reduce el margen derecho */
+    }
+}
+
+/* ----- Sección de Llamado a la Acción (CTA) ----- */
+.cta {
+    margin: 100px auto; /* Centra la sección y agrega espacio superior e inferior */
+    width: 80%; /* El contenedor ocupa el 80% del ancho de la página */
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(images/banner2.jpg); /* Fondo con imagen y degradado oscuro */
+    background-position: center; /* Centra la imagen de fondo */
+    background-size: cover; /* Escala la imagen para cubrir todo el contenedor */
+    border-radius: 10px; /* Bordes redondeados */
+    text-align: center; /* Centra el texto */
+    padding: 100px 0; /* Espaciado interno vertical */
+}
+
+/* Estilos para el título dentro de la sección CTA */
+.cta h1 {
+    color: #fff; /* Texto blanco */
+    margin-bottom: 40px; /* Espacio inferior */
+    padding: 0; /* Sin espaciado interno adicional */
+}
+
+/* Adaptaciones para pantallas pequeñas */
+@media(max-width: 700px) {
+    .cta h1 {
+        font-size: 24px; /* Reduce el tamaño del texto en pantallas pequeñas */
+    }
+}
+
+/* ----- Pie de página (footer) ----- */
+.footer {
+    width: 100%; /* El contenedor del pie de página ocupa todo el ancho de la página */
+    text-align: center; /* Centra el contenido del texto */
+    padding: 30px 0; /* Espaciado superior e inferior para separar visualmente el contenido */
+}
+
+/* Estilo para el título o subtítulo dentro del footer */
+.footer h4 {
+    margin-bottom: 25px; /* Espacio inferior para separar del contenido siguiente */
+    margin-top: 20px; /* Espacio superior para separar del contenido anterior */
+    font-weight: 600; /* Grosor semi-negrita para destacar el título */
+}
+
+/* Estilo para los íconos sociales dentro del footer */
+.icons .fa {
+    color: #f44336; /* Color rojo para los íconos */
+    margin: 0 13px; /* Espaciado horizontal entre los íconos */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre los íconos */
+    padding: 18px 0; /* Espaciado vertical para un diseño limpio */
+}
+
+/* Clase sin contenido (vacía) */
+.fa-heart-o {
+    /* Clase definida pero sin reglas de estilo aplicadas */
+}
+
+/* ----- Sección de Análisis de Información y Minería de Datos ----- */
+.datos {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: #fffaf5; /* fondo suave */
+}
+
+.datos h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.datos h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #f44336;
+}
+
+.datos .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.datos-col {
+    flex-basis: 48%;
+    background: #fff3f3;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.datos-col ul {
+    padding-left: 20px;
+}
+
+.datos-col ul li {
+    margin-bottom: 10px;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.datos-col ul ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+@media(max-width: 700px) {
+    .datos .row {
+        flex-direction: column;
+    }
+
+    .datos-col {
+        flex-basis: 100%;
+    }
+}
+
+.datos-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Asegura que las sublistas no se numeren automáticamente */
+.proceso-md ol,
+.proceso-md ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo específico para la sublista visual dentro del paso 3 */
+.sublista-md {
+  list-style: none !important;
+  padding-left: 0;
+  margin-top: 15px;
+}
+
+.sublista-md li {
+  background: #f6f6ff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  font-size: 15px;
+  position: relative;
+}
+
+.sublista-md li i {
+  margin-right: 10px;
+  color: #3f51b5;
+  min-width: 20px;
+}
+
+
+.sublista-md li i {
+  color: #673ab7;  /* Color púrpura intenso */
+  font-size: 16px;
+  margin-right: 10px;
+  min-width: 20px;
+}
+
+/* O si quieres diferentes colores por ícono: */
+.sublista-md li:nth-child(1) i {
+  color: #2196f3; /* Azul para Patrones frecuentes */
+}
+.sublista-md li:nth-child(2) i {
+  color: #4caf50; /* Verde para Clasificaciones */
+}
+.sublista-md li:nth-child(3) i {
+  color: #ff9800; /* Naranja para Predicciones */
+}
+.sublista-md li:nth-child(4) i {
+  color: #f44336; /* Rojo para Segmentaciones */
+}
+
+.lista-kdd li i {
+  color: #3f51b5;  /* Color principal (azul violeta) */
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+/* Colores personalizados por ícono o posición */
+.lista-kdd li:nth-child(1) i {
+  color: #2196f3; /* Azul */
+}
+.lista-kdd li:nth-child(2) i {
+  color: #4caf50; /* Verde */
+}
+.lista-kdd li:nth-child(3) i {
+  color: #ff9800; /* Naranja */
+}
+.lista-kdd li:nth-child(4) i {
+  color: #9c27b0; /* Púrpura */
+}
+.lista-kdd li:nth-child(5) i {
+  color: #f44336; /* Rojo */
+}
+
+
